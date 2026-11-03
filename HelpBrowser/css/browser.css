@@ -1,0 +1,523 @@
+﻿/* =====================================================
+HtmlHelpBuilder2
+Browser CSS - Versione con ricerca
+===================================================== */
+
+/* =====================================================
+Impostazioni generali
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+/* =====================================================
+Pagina
+============================================        */
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Consolas, "Courier New", monospace;
+    font-size: 14px;
+    color: #222;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* =====================================================
+Toolbar
+===================================================== */
+#toolbar {
+    height: 48px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    background: #252526;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* =====================================================
+Titolo toolbar
+===================================================== */
+
+#toolbarTitle {
+    white-space: nowrap;
+}
+
+/* =====================================================
+Barra ricerca
+===================================================== */
+
+#searchBar {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    height: 32px;
+}
+
+/* Icona ricerca */
+#searchIcon {
+    margin-right: 6px;
+    font-size: 16px;
+    line-height: 32px;
+}
+
+/* Casella ricerca */
+
+#searchInput {
+    width: 200px;
+    height: 28px;
+    padding: 4px 8px;
+    border: 1px solid #777;
+    border-radius: 3px;
+    background: #ffffff;
+    color: #222;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 13px;
+    outline: none;
+}
+
+    /* Casella ricerca quando selezionata */
+
+    #searchInput:focus {
+        border-color: #0078d7;
+    }
+
+/* Pulsante ricerca */
+#searchButton {
+    height: 28px;
+    margin-left: 6px;
+    padding: 0 12px;
+    border: 1px solid #777;
+    border-radius: 3px;
+    background: #ccfae9;
+    color: #222;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+    /* Hover pulsante */
+
+    #searchButton:hover {
+        background: #cef974;
+    }
+
+
+
+/* Pulsante ricerca mirata */
+#searchBtnMirata {
+    height: 28px;
+    margin-left: 6px;
+    padding: 0 12px;
+    border: 1px solid #777;
+    border-radius: 3px;
+    background: #ccfae9;
+    color: #222;
+    font-family: "Segoe UI", sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+ 
+}
+
+    /* Hover pulsante ricerca mirata */
+
+    #searchBtnMirata:hover {
+        background: #cef974;
+    }
+
+
+/* =====================================================
+Contenitore principale
+===================================================== */
+#container {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+}
+
+/* =====================================================
+Icone albero
+===================================================== */
+.tree-icon {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.arrow-icon {
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+/* =====================================================
+Nome cartelle e file
+===================================================== */
+
+.folder-name,
+.file-name {
+    margin-left: 4px;
+}
+
+/* =====================================================
+Albero directory
+===================================================== */
+
+.tree-root {
+    font-size: 14px;
+    line-height: 26px;
+}
+
+.folder-header {
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.file-item {
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+/* =====================================================
+Albero progetto
+===================================================== */
+left-panel {
+    width: 380px;
+    min-width: 350px;
+}
+
+#tree {
+    width: 380px;
+    min-width: 250px;
+    overflow: auto;
+    border-right: 1px solid #cccccc;
+    background: #f8f8f8;
+    padding: 8px;
+}
+
+    #tree h3 {
+        margin-top: 5px;
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+/* =====================================================
+Liste
+===================================================== */
+.tree-root,
+.folder-content {
+    list-style: none;
+    margin: 0;
+    padding-left: 18px;
+}
+
+/* =====================================================
+Cartelle
+===================================================== */
+.folder-item {
+    margin: 1px 0;
+}
+
+.folder-header {
+    height: 22px;
+    line-height: 22px;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.folder-header {
+    background: #e5f1fb;
+}
+
+.folder-icon {
+    display: inline-block;
+    width: 18px;
+    font-size: 12px;
+}
+
+/* =====================================================
+File VB
+===================================================== */
+.file-item {
+    height: 22px;
+    line-height: 22px;
+    margin-left: 2px;
+    padding-left: 18px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.file-item {
+    background: #e5f1fb;
+}
+
+.file-icon {
+    display: inline-block;
+    width: 20px;
+}
+/* File selezionato */
+
+.file-item.selected {
+    background: #0078d7;
+    color: white;
+}
+
+/* =====================================================
+Visualizzatore codice
+===================================================== */
+#viewer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+/* =====================================================
+Albero struttura codice
+===================================================== */
+#codeTree {
+    height: 200px;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-bottom: 1px solid #cccccc;
+    background: #fafafa;
+    padding: 8px;
+}
+
+/* =====================================================
+Titolo file corrente
+===================================================== */
+#fileTitle {
+    height: 32px;
+    min-height: 32px;
+    line-height: 32px;
+    padding-left: 15px;
+    background: rgb(192, 255, 192);
+    border-bottom: 1px solid #cccccc;
+    font-weight: bold;
+}
+
+/* =====================================================
+Visualizzatore codice con numeri di riga
+===================================================== */
+#codeContainer {
+    flex: 1;
+    display: flex;
+    min-height: 0;
+    overflow: hidden;
+}
+
+/* =====================================================
+Codice sorgente
+===================================================== */
+#sourceCode {
+    flex: 1;
+    margin: 0;
+    padding: 15px;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.4;
+    white-space: normal;
+    overflow: auto;
+    height: 100%;
+}
+    /* Assicuriamo che ogni line div non introduca margini e occupi l'altezza di una riga */
+    #sourceCode > div {
+        margin: 0;
+        padding: 0;
+        display: block;
+        white-space: pre; /* preserva indentazione/spazi interni della singola riga */
+        line-height: 1.4;
+        min-height: 1.4em; /* garantisce spazio anche per righe vuote */
+    }
+/* =====================================================
+Colonna numeri di riga
+===================================================== */
+
+#lineNumbers {
+    width: 55px;
+    padding-top: 15px;
+    padding-right: 10px;
+    text-align: right;
+    color: #888888;
+    background: #f3f3f3;
+    border-right: 1px solid #cccccc;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.4;
+    user-select: none;
+    overflow: hidden;
+}
+
+/* =====================================================
+Risultati ricerca
+===================================================== */
+#searchResults {
+    height: 250px;
+    min-height: 250px;
+    width: 100%;
+    border-top: 1px solid #cccccc;
+    background: #fafafa;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Titolo risultati */
+#searchResultsTitle {
+    height: 30px;
+    min-height: 30px;
+    line-height: 30px;
+    padding-left: 12px;
+    background: #eeeeee;
+    border-bottom: 1px solid #cccccc;
+    font-weight: bold;
+}
+
+/* Contenitore risultati */
+
+#searchResultsContent {
+    flex: 1;
+  /*  height: 200px; NON incide su aòtezza   */
+    padding: 10px 14px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 15px;
+    background: #fed965;
+    font-weight:bold;
+}
+
+/* =====================================================
+Syntax Highlighting VB.NET
+===================================================== */
+
+.keyword {
+    color: #0000FF;
+    font-weight: bold;
+}
+
+.comment {
+    color: green;
+}
+
+.string {
+    color: #A31515;
+}
+
+.number {
+    color: #FF0000;
+}
+
+.class-name {
+    color: #2B91AF;
+    font-weight: bold;
+}
+
+/* =====================================================
+Albero codice
+===================================================== */
+
+code-children {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.code-children.collapsed {
+    display: none;
+}
+
+.code-header {
+    cursor: pointer;
+    display: block;
+}
+
+.code-node {
+    display: inline-block;
+}
+
+.collapsible {
+    cursor: pointer;
+    user-select: none;
+}
+
+/* =====================================================
+Icone apertura / chiusura
+===================================================== */
+toggle-icon {
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    margin-right: 6px;
+    cursor: pointer;
+}
+
+.toggle-placeholder {
+    display: inline-block;
+    width: 20px;
+}
+
+.treeicon {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 5px;
+    pointer-events: none;
+}
+/* =====================================================
+Region VB.NET
+===================================================== */
+
+.region-header {
+    background-color: #ffd6d6;
+    color: #d00000;
+    font-weight: bold;
+}
+
+.region-line {
+    color: #d00000;
+    font-weight: bold;
+}
+
+/* =====================================================
+Evidenziazione Region nel Code Tree
+===================================================== */
+
+.code-header.region-header {
+    background-color: yellow !important;
+    color: red !important;
+    font-weight: bold !important;
+}
+
+/* =====================================================
+Icona legend.png
+===================================================== */
+
+.code-arrow {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 10px;
+    cursor: pointer;
+}

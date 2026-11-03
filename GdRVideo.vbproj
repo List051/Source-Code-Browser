@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.SqlServer.Types.170.1000.7\build\net472\Microsoft.SqlServer.Types.props" Condition="Exists('packages\Microsoft.SqlServer.Types.170.1000.7\build\net472\Microsoft.SqlServer.Types.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EB26F00B-95D7-41D5-A751-E028AC7ED2E9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>GdRVideo.My.MyApplication</StartupObject>
+    <RootNamespace>GdRVideo</RootNamespace>
+    <AssemblyName>GdRVideo</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>GdRVideo.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>GdRVideo.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\GdR2.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CMBoxVB">
+      <HintPath>..\Tutte_Librerie\CMBoxVB.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=23ec7fc2d6eaa4a5, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Server.1.0.0\lib\net46\Microsoft.SqlServer.Server.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.170.1000.7\lib\net472\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.4078.44, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Web.WebView2.1.0.4078.44\lib\net462\Microsoft.Web.WebView2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.WinForms, Version=1.0.4078.44, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Web.WebView2.1.0.4078.44\lib\net462\Microsoft.Web.WebView2.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Wpf, Version=1.0.4078.44, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Web.WebView2.1.0.4078.44\lib\net462\Microsoft.Web.WebView2.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.1.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Tutte_Librerie\jason\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RJCodeAdvance.RJControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\RJCodeAdvance.RJControls.1.0.0\lib\net45\RJCodeAdvance.RJControls.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="WinItalPascal, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WinItalPascal\bin\Debug\WinItalPascal.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CreaAlbero.vb" />
+    <Compile Include="FrmMessBox.Designer.vb">
+      <DependentUpon>FrmMessBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMessBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelpBrowser\source\Core\BrowserSettings.vb" />
+    <Compile Include="HelpBrowser\source\Core\CodeHighlighter.vb" />
+    <Compile Include="HelpBrowser\source\Core\Codicee_Test\btn_gestireDB.vb" />
+    <Compile Include="HelpBrowser\source\Core\HtmlUtility.vb" />
+    <Compile Include="HelpBrowser\source\Core\JsBridge.vb" />
+    <Compile Include="HelpBrowser\source\Core\Ricerca.vb" />
+    <Compile Include="HelpBrowser\source\Core\SourceLoader.vb" />
+    <Compile Include="HelpBrowser\source\Core\TreeBuilder.vb" />
+    <Compile Include="HelpBrowser\source\Core\VbCodeElement.vb" />
+    <Compile Include="HelpBrowser\source\Core\VbCodeElementType.vb" />
+    <Compile Include="HelpBrowser\source\Core\Tree\VbFile.vb" />
+    <Compile Include="HelpBrowser\source\Core\VbCodeFile.vb" />
+    <Compile Include="HelpBrowser\source\Core\VbNode.vb" />
+    <Compile Include="HelpBrowser\source\Core\VbNodeType.vb" />
+    <Compile Include="HelpBrowser\source\Core\VbParser.vb" />
+    <Compile Include="HelpBrowser\source\Core\VbStructureParser.vb" />
+    <Compile Include="HelpBrowser\source\Core\Tree\Esempio_Codice_SottoCartella.vb" />
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGestInt.Designer.vb">
+      <DependentUpon>FrmGestInt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGestInt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWebHelp.Designer.vb">
+      <DependentUpon>FrmWebHelp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmWebHelp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GdRDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GdRDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HelpDocument.vb" />
+    <Compile Include="HtmlHelpBuilder.vb" />
+    <Compile Include="HelpBrowser\source\Core\HtmlHelpBuilder2.vb" />
+    <Compile Include="ModAggiornaBeni.vb" />
+    <Compile Include="ModColoraTesto.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="HelpBrowser\source\Core\Tree\TestDefinitivo.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestInt.resx">
+      <DependentUpon>FrmGestInt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMessBox.resx">
+      <DependentUpon>FrmMessBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWebHelp.resx">
+      <DependentUpon>FrmWebHelp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GdRDataSet.xsc">
+      <DependentUpon>GdRDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GdRDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GdRDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GdRDataSet.xss">
+      <DependentUpon>GdRDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reports\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\attesa.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\browsing.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buy.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cashier.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cheque.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clessidra.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\consegnato.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copywriting.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cost-book.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ebook.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edc.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exchange.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gestiord.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\github.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ok.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\online-order.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\opened-folder.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open-enrollment.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\order.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orologio.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer%281%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quote.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recycle.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search%281%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-engine.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\services.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-page.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spedito.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tax.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrows%281%29.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrows.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conf-tel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Risultato.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reportA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reportB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ago-bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HelpBrowser\css\browser.css" />
+    <Content Include="HelpBrowser\browser.html" />
+    <Content Include="HelpBrowser\images\arrow_down.png" />
+    <Content Include="HelpBrowser\images\arrow_right.png" />
+    <Content Include="HelpBrowser\images\cog_go.png" />
+    <Content Include="HelpBrowser\images\core_.foldersr.png" />
+    <Content Include="HelpBrowser\images\css.png" />
+    <Content Include="HelpBrowser\images\dialog.png" />
+    <Content Include="HelpBrowser\images\folder.png" />
+    <Content Include="HelpBrowser\images\folder_aperta.png" />
+    <Content Include="HelpBrowser\images\html.png" />
+    <Content Include="HelpBrowser\images\item_select.png" />
+    <Content Include="HelpBrowser\images\js.png" />
+    <Content Include="HelpBrowser\images\key.png" />
+    <Content Include="HelpBrowser\images\legend.png" />
+    <Content Include="HelpBrowser\images\minor.png" />
+    <Content Include="HelpBrowser\images\minus.png" />
+    <Content Include="HelpBrowser\images\notes_pin.png" />
+    <Content Include="HelpBrowser\images\plus.png" />
+    <Content Include="HelpBrowser\images\red_line.png" />
+    <Content Include="HelpBrowser\images\search_plus.png" />
+    <Content Include="HelpBrowser\images\star.png" />
+    <Content Include="HelpBrowser\images\tag_green.png" />
+    <Content Include="HelpBrowser\java\browser.js" />
+    <None Include="Resources\GdR2.ico" />
+    <None Include="Resources\favorites.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="packages\Microsoft.Web.WebView2.1.0.4078.44\build\Microsoft.Web.WebView2.targets" Condition="Exists('packages\Microsoft.Web.WebView2.1.0.4078.44\build\Microsoft.Web.WebView2.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Questo progetto fa riferimento a uno o più pacchetti NuGet che non sono presenti in questo computer. Usare lo strumento di ripristino dei pacchetti NuGet per scaricarli. Per altre informazioni, vedere http://go.microsoft.com/fwlink/?LinkID=322105. Il file mancante è {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.Web.WebView2.1.0.4078.44\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.Web.WebView2.1.0.4078.44\build\Microsoft.Web.WebView2.targets'))" />
+    <Error Condition="!Exists('packages\Microsoft.SqlServer.Types.170.1000.7\build\net472\Microsoft.SqlServer.Types.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.SqlServer.Types.170.1000.7\build\net472\Microsoft.SqlServer.Types.props'))" />
+  </Target>
+</Project>

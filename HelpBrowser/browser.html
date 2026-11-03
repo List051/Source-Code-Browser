@@ -1,0 +1,160 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <title>WinItalPascal - Source Browser</title>
+
+    <link rel="stylesheet" href="css/browser.css">
+</head>
+<body>
+
+
+
+
+    <!-- =================================================
+         Toolbar
+         ================================================= -->
+
+    <div id="toolbar">
+
+        <div id="toolbarTitle">
+            WinItalPascal - Browser Codice Sorgente
+        </div>
+
+
+        <!-- =========================
+         Ricerca -  Blocco Doppio click per ricerca mirata
+         ========================= -->
+        <!-- nel body della pagina: -->
+
+
+    </div>
+
+
+    <!-- =================================================
+         Area principale
+         ================================================= -->
+
+    <div id="container">
+
+
+        <!-- =========================
+             Albero file
+             ========================= -->
+
+        <div id="tree" class="left-panel">
+
+            <h3>
+                Progetto
+            </h3>
+
+
+            <div id="directoryTree">
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             Visualizzatore codice
+             ========================= -->
+
+        <div id="viewer">
+
+
+            <div id="fileTitle">
+
+                Nessun file selezionato
+
+            </div>
+
+
+
+            <!-- =========================
+             Struttura codice VB.NET
+             Class / Region / Metodi
+             ========================= -->
+
+            <div id="codeTree">
+
+            </div>
+
+
+            <!-- =========================
+             Codice sorgente evidenziato
+
+            style="background: yellow;
+             ========================= -->
+
+            <div id="codeContainer">
+
+
+                <div id="lineNumbers">
+                </div>
+
+
+
+                <div id="sourceCode">Seleziona un file .vb</div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         Risultati ricerca
+         ================================================= -->
+    <!-- Search bar: un'unica coppia input/button -->
+    <div id="searchBar">
+        <span id="searchIcon">🔎</span>
+        <input id="searchInput" type="text" placeholder="Cerca nel progetto..." autocomplete="off">
+        <button id="searchButton" type="button" onclick="RicercaDiretta()">RiCerca</button>
+        <!--<button id="searchBtnMirata" type="button">Cerca Mirata</button>-->
+    </div>
+
+        <!--<button id="searchButton"
+                type="button">-->
+    <!--onclick="alert('VALORE AL CLICK = [' + document.getElementById('searchInput').value + ']')"-->
+    <!--RicercaDiretta()
+        </button>
+
+    <!-- ============= Risultati ricerca ==================== -->
+
+    <div id="searchResults">
+
+        <div id="searchResultsTitle" style="background:cyan;">
+            Risultati ricerca
+        </div>
+
+
+        <div id="searchResultsContent">
+
+            Nessuna ricerca eseguita.
+
+        </div>
+
+    </div>
+
+    <!-- =================================================
+         JavaScript principale
+         ================================================= -->
+
+    <script src="java/browser.js"></script>
+
+    <!--<script>
+
+        window.onload = function ()
+
+      /*   { TestWebView(); }*/ { RicercaDiretta }
+
+    </script>-->
+
+</body>
+</html>
